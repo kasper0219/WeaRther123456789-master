@@ -32,7 +32,7 @@ public class InsertActivity extends AppCompatActivity {
     private ImageView ivSpot;
     private Spinner spClothes;
     private Spinner spType;
-    private Spinner spSleeve;
+    private Spinner spColor;
     private Spinner spMaterial;
     private MySQLiteOpenHelper helper;
     private byte[] image;
@@ -79,14 +79,14 @@ public class InsertActivity extends AppCompatActivity {
 
 
 
-        spSleeve = (Spinner) findViewById(R.id.spSleeve);
-        String[] sleeve = {"長", "短"};
-        ArrayAdapter<String> adapterSleeve = new ArrayAdapter<>(this,
-                android.R.layout.simple_spinner_item, sleeve);
-        adapterSleeve
+        spColor = (Spinner) findViewById(R.id.spColor);
+        String[] color = {"黑", "白" , "紅","黃","藍","綠","紫"};
+        ArrayAdapter<String> adapterColor = new ArrayAdapter<>(this,
+                android.R.layout.simple_spinner_item, color);
+        adapterColor
                 .setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spSleeve.setAdapter(adapterSleeve);
-        spSleeve.setSelection(0, true);
+        spColor.setAdapter(adapterColor);
+        spColor.setSelection(0, true);
 
 
         spMaterial = (Spinner) findViewById(R.id.spMaterial);
@@ -125,7 +125,9 @@ public class InsertActivity extends AppCompatActivity {
         if (isIntentAvailable(this, intent)) {
             startActivityForResult(intent, REQUEST_TAKE_PICTURE);
         } else {
-            Toast.makeText(this, R.string.msg_NoCameraAppsFound,
+            Toast.makeText(this,
+
+                    R.string.msg_NoCameraAppsFound,
                     Toast.LENGTH_SHORT).show();
         }
     }
@@ -239,18 +241,18 @@ public class InsertActivity extends AppCompatActivity {
                 .toString().trim();
         String type = spType.getSelectedItem()
                 .toString().trim();
-        String sleeve = spSleeve.getSelectedItem()
+        String color = spColor.getSelectedItem()
                 .toString().trim();
         String material = spMaterial.getSelectedItem()
                 .toString().trim();
 
         if (image == null) {
-            Toast.makeText(this, "�S�Ϥ�",
+            Toast.makeText(this, "沒圖片",
                     Toast.LENGTH_SHORT).show();
             return;
         }
 
-        Spot spot = new Spot(clothes, type, sleeve, material, image);
+        Spot spot = new Spot(clothes, type, color, material, image);
         long rowId = helper.insert(spot);
         if (rowId != -1) {
             Toast.makeText(this, R.string.msg_InsertSuccess,

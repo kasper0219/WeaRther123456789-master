@@ -3,28 +3,15 @@ package com.example.davidhsu.sdweather;
 /**
  * Created by David Hsu on 2015/9/19.
  */
-import java.io.ByteArrayOutputStream;
-import java.io.File;
 import java.util.List;
-import java.util.ArrayList;
-import android.content.ContentValues;
 
-import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.content.pm.ResolveInfo;
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
-import android.database.sqlite.SQLiteOpenHelper;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.net.Uri;
 import android.os.Bundle;
-import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.davidhsu.sdweather.sqlDatabase.MySQLiteOpenHelper;
 import com.example.davidhsu.sdweather.sqlDatabase.Spot;
@@ -43,7 +30,7 @@ public class match extends AppCompatActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.match_layout);
+        setContentView(R.layout.match);
 
         if (helper == null) {
             helper = new MySQLiteOpenHelper(this);

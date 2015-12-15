@@ -36,7 +36,7 @@ public class UpdateActivity extends AppCompatActivity {
     private TextView tvId;
     private Spinner spClothes;
     private Spinner spType;
-    private Spinner spSleeve;
+    private Spinner spColor;
     private Spinner spMaterial;
     private MySQLiteOpenHelper helper;
     private byte[] image;
@@ -75,15 +75,15 @@ public class UpdateActivity extends AppCompatActivity {
         spType = (Spinner) findViewById(R.id.spType);
         spType.setAdapter(adapter2);
 
-        spSleeve = (Spinner) findViewById(R.id.spSleeve);
-        String[] sleeve = {"長", "短"};
-        ArrayAdapter<String> adapterSleeve = new ArrayAdapter<>(this,
-                android.R.layout.simple_spinner_item, sleeve);
-        adapterSleeve
+        spColor = (Spinner) findViewById(R.id.spColor);
+        String[] color = {"黑", "白" , "紅","黃","藍","綠","紫"};
+        ArrayAdapter<String> adapterColor = new ArrayAdapter<>(this,
+                android.R.layout.simple_spinner_item, color);
+        adapterColor
                 .setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spSleeve.setAdapter(adapterSleeve);
-        spSleeve.setSelection(0, true);
-        spSleeve.setOnItemSelectedListener(listener);
+        spColor.setAdapter(adapterColor);
+        spColor.setSelection(0, true);
+        spColor.setOnItemSelectedListener(listener);
 
         spMaterial = (Spinner) findViewById(R.id.spMaterial);
         String[] material = {"棉", "絲","人工纖維"};
@@ -248,7 +248,7 @@ public class UpdateActivity extends AppCompatActivity {
         int id = Integer.parseInt(tvId.getText().toString());
         String clothes =spClothes.getSelectedItem().toString();
         String type = spType.getSelectedItem().toString();
-        String sleeve = spSleeve.getSelectedItem().toString();
+        String color = spColor.getSelectedItem().toString();
         String material = spMaterial.getSelectedItem().toString();
 
         if (image == null) {
@@ -257,7 +257,7 @@ public class UpdateActivity extends AppCompatActivity {
             return;
         }
 
-        Spot spot = new Spot(id, clothes, type, sleeve, material, image);
+        Spot spot = new Spot(id, clothes, type, color, material, image);
         int count = helper.update(spot);
         Toast.makeText(this, count + " " + getString(R.string.msg_RowUpdated),
                 Toast.LENGTH_SHORT).show();

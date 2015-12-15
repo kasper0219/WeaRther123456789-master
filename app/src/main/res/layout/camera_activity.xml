@@ -79,13 +79,13 @@
                 android:layout_alignEnd="@+id/tvTitleClothes" />
 
             <TextView
-                android:id="@+id/tvTitleSleeve"
+                android:id="@+id/tvTitleColor"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignRight="@id/tvTitleId"
                 android:layout_below="@+id/tvTitleType"
                 android:layout_marginTop="5dp"
-                android:text="@string/text_SpotSleeve"
+                android:text="顏色"
                 android:textSize="16sp" />
 
             <TextView
@@ -93,7 +93,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignRight="@id/tvTitleId"
-                android:layout_below="@+id/tvTitleSleeve"
+                android:layout_below="@+id/tvTitleColor"
                 android:layout_marginTop="5dp"
                 android:text="@string/text_SpotMaterial"
                 android:textSize="16sp" />
@@ -122,19 +122,19 @@
                 android:layout_alignLeft="@+id/tvClothes" />
 
             <TextView
-                android:id="@+id/tvSleeve"
+                android:id="@+id/tvColor"
                 android:layout_width="wrap_content"
                 android:layout_height="24dp"
-                android:layout_alignTop="@+id/tvTitleSleeve"
+                android:layout_alignTop="@+id/tvTitleColor"
                 android:layout_alignLeft="@+id/tvType" />
 
             <TextView
                 android:id="@+id/tvMaterial"
                 android:layout_width="wrap_content"
                 android:layout_height="24dp"
-                android:layout_below="@+id/tvSleeve"
+                android:layout_below="@+id/tvColor"
                 android:layout_alignTop="@+id/tvTitleMaterial"
-                android:layout_alignLeft="@+id/tvSleeve" />
+                android:layout_alignLeft="@+id/tvColor" />
 
         </RelativeLayout>
     </ScrollView>

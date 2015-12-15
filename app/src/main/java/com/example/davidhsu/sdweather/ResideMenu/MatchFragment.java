@@ -3,7 +3,6 @@ package com.example.davidhsu.sdweather.ResideMenu;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.drawable.Drawable;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
@@ -62,7 +61,7 @@ public class MatchFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-        matchParentView = inflater.inflate(R.layout.match_layout, container, false);
+        matchParentView = inflater.inflate(R.layout.newmatch, container, false);
 
         mTextView = (TextView)matchParentView.findViewById(R.id.tvTemp);
 

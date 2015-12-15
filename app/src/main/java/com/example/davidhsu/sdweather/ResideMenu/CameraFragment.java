@@ -8,14 +8,12 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.davidhsu.sdweather.R;
-import com.example.davidhsu.sdweather.match;
 import com.example.davidhsu.sdweather.sqlDatabase.InsertActivity;
 import com.example.davidhsu.sdweather.sqlDatabase.MySQLiteOpenHelper;
 import com.example.davidhsu.sdweather.sqlDatabase.Spot;
@@ -38,7 +36,7 @@ public class CameraFragment extends Fragment {
     private TextView tvId;
     private TextView tvClothes;
     private TextView tvType;
-    private TextView tvSleeve;
+    private TextView tvColor;
     private TextView tvMaterial;
     private List<Spot> spotList;
     private int index;
@@ -71,7 +69,7 @@ public class CameraFragment extends Fragment {
         tvId = (TextView) cameraParentView.findViewById(R.id.tvId);
         tvClothes = (TextView) cameraParentView.findViewById(R.id.tvClothes);
         tvType = (TextView) cameraParentView.findViewById(R.id.tvType);
-        tvSleeve = (TextView) cameraParentView.findViewById(R.id.tvSleeve);
+        tvColor = (TextView) cameraParentView.findViewById(R.id.tvColor);
         tvMaterial = (TextView) cameraParentView.findViewById(R.id.tvMaterial);
 
         ImageButton onNextClick = (ImageButton)cameraParentView.findViewById(R.id.btNext);
@@ -158,7 +156,7 @@ public class CameraFragment extends Fragment {
             tvId.setText(Integer.toString(spot.getId()));
             tvClothes.setText(spot.getClothes());
             tvType.setText(spot.getType());
-            tvSleeve.setText(spot.getSleeve());
+            tvColor.setText(spot.getColor());
             tvMaterial.setText(spot.getMaterial());
             tvRowCount.setText((index + 1) + "/" + spotList.size());
         } else {
@@ -166,7 +164,7 @@ public class CameraFragment extends Fragment {
             tvId.setText(null);
             tvClothes.setText(null);
             tvType.setText(null);
-            tvSleeve.setText(null);
+            tvColor.setText(null);
             tvMaterial.setText(null);
             tvRowCount.setText(" 0/0 ");
         }

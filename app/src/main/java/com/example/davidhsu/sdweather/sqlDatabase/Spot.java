@@ -9,19 +9,19 @@ public class Spot {
     private int id;
     private String clothes;
     private String type;
-    private String sleeve;
+    private String color;
     private String material;
     private byte[] image;
 
-    public Spot(String clothes, String type, String sleeve, String material, byte[] image) {
-        this(0, clothes, type, sleeve, material, image);
+    public Spot(String clothes, String type, String color, String material, byte[] image) {
+        this(0, clothes, type, color, material, image);
     }
 
-    public Spot(int id, String clothes, String type, String sleeve, String material, byte[] image) {
+    public Spot(int id, String clothes, String type, String color, String material, byte[] image) {
         this.id = id;
         this.clothes = clothes;
         this.type = type ;
-        this.sleeve = sleeve;
+        this.color = color;
         this.material = material;
         this.image = image;
     }
@@ -48,9 +48,9 @@ public class Spot {
         return type;
     }
 
-    public void setSleeve(String sleeve) {this.sleeve = sleeve;}
+    public void setColor(String color) {this.color = color;}
 
-    public String getSleeve() {return sleeve;}
+    public String getColor() {return color;}
 
     public void setMaterial(String material) {this.material = material;}
 

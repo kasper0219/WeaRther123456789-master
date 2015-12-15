@@ -76,7 +76,7 @@
     <string name="text_SpotId">編號</string>
     <string name="text_SpotClothes">衣物</string>
     <string name="text_SpotType">款式</string>
-    <string name="text_SpotSleeve">袖長</string>
+    <string name="text_Spotolor">顏色</string>
     <string name="text_SpotMaterial">材質</string>
     <string name="text_Clear">清除</string>
     <string name="text_btNext">下一個</string>
@@ -87,7 +87,7 @@
 
     <string name="text_tvClothes">衣物</string>
     <string name="text_tvType">款式</string>
-    <string name="text_tvSleeve">袖長</string>
+    <string name="text_tvColor">顏色</string>
     <string name="text_tvMaterial">材質</string>
 
     <string name="msg_InsertSuccess">輸入成功</string>
